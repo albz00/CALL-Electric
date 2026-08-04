@@ -1,0 +1,8 @@
+name = "call-electric"
+compatibility_date = "2025-08-01"
+pages_build_output_dir = "."
+
+# Secrets are set in the Cloudflare dashboard (or via `wrangler pages secret put`):
+#   resend_api_key
+#   turnstile_secret_key
+# They are available on Pages Functions as env.resend_api_key / env.turnstile_secret_key.
