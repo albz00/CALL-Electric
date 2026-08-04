@@ -82,11 +82,19 @@ export async function onRequestPost(context) {
       !resendKey ? 'resend_api_key' : null,
       !turnstileSecret ? 'turnstile_secret_key' : null,
     ].filter(Boolean);
-    console.error('Contact form missing env bindings:', missing.join(', '));
+    // Names only — never values — so we can see what Pages actually bound.
+    const available = Object.keys(env || {}).sort();
+    console.error(
+      'Contact form missing env bindings:',
+      missing.join(', '),
+      'available:',
+      available.join(', ') || '(none)'
+    );
     return json(
       {
         ok: false,
         error: `Form is not configured. Missing: ${missing.join(', ')}`,
+        availableBindings: available,
       },
       500
     );
