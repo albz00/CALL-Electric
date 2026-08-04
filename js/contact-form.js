@@ -1,6 +1,5 @@
 (function () {
   var ENDPOINT = '/api/contact';
-  // Every site form: contact, service quote, and footer subscribe.
   var FORM_SELECTOR =
     '#ce-form-Contact-Form, #ce-form-Service-Form, #ce-form-Footer-Subscribe, form[data-name], .w-form form';
 
@@ -49,8 +48,6 @@
     form.style.display = ok ? 'none' : '';
     if (done) done.style.display = ok ? 'block' : 'none';
     if (fail) fail.style.display = ok ? 'none' : 'block';
-    if (ok && done) done.focus();
-    if (!ok && fail) fail.focus();
   }
 
   async function handleSubmit(event) {
@@ -66,17 +63,16 @@
 
     var formName =
       form.getAttribute('data-name') || form.getAttribute('name') || 'Contact Form';
-    var email = fieldValue(form, [
-      'Email',
-      'email',
-      'Footer-Email-2',
-      'Footer-Email',
-      'Email-2',
-    ]);
 
     var payload = {
       name: fieldValue(form, ['Name', 'name', 'Full-Name', 'Full Name']),
-      email: email,
+      email: fieldValue(form, [
+        'Email',
+        'email',
+        'Footer-Email-2',
+        'Footer-Email',
+        'Email-2',
+      ]),
       phone: fieldValue(form, ['Phone', 'phone', 'Phone-Number']),
       subject: fieldValue(form, ['Subject', 'subject']),
       message: fieldValue(form, ['Message', 'message']),
@@ -94,8 +90,12 @@
       var data = await res.json().catch(function () {
         return { ok: false };
       });
+      if (!(res.ok && data.ok) && data && data.error) {
+        console.error('Contact form error:', data.error, data);
+      }
       showResult(form, res.ok && data.ok);
     } catch (err) {
+      console.error('Contact form request failed:', err);
       showResult(form, false);
     } finally {
       setLoading(form, false);
