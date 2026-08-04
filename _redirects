@@ -1,0 +1,7 @@
+# Permanent redirects for renamed service pages
+/service/storage /service/electrical-upgrades 301
+/service/storage/ /service/electrical-upgrades 301
+/service/load-unload /service/protection 301
+/service/load-unload/ /service/protection 301
+/service/commercial-moving /service/generator-installs 301
+/service/commercial-moving/ /service/generator-installs 301

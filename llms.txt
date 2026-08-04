@@ -1,0 +1,27 @@
+# CALL Electric LLC
+
+> Licensed electrical contractor in Lewisburg, WV, serving Greenbrier County and surrounding areas. Owned by master electrician Chris Ratliff — Generac Certified Service Technician offering residential and commercial electrical services.
+
+CALL Electric specializes in panel mapping, electrical upgrades, surge/lightning/EMP protection, backup generator installation, whole-house wiring, and Generac generator service. Contact: (304) 578-5918 or chris@callelectric.net.
+
+## Pages
+
+- [Home](https://www.callelectric.net/): Main landing page with services overview, testimonials, and quote request
+- [About](https://www.callelectric.net/about): Company story and background on owner Chris Ratliff
+- [Services](https://www.callelectric.net/services): Full list of electrical services
+- [Contact](https://www.callelectric.net/contact): Contact form, phone, email, and FAQs
+- [Generac Service Technician](https://www.callelectric.net/generac-service-technician): Generac certified service and warranty information
+
+## Services
+
+- [Panel Mapping](https://www.callelectric.net/service/panel-mapping): Circuit IQ smart panel mapping and breaker labeling
+- [Electrical Upgrades](https://www.callelectric.net/service/electrical-upgrades): Panel, breaker, lighting, and service equipment upgrades
+- [Surge, Lightning, and EMP Protection](https://www.callelectric.net/service/protection): Surge protectors, lightning, and EMP shielding
+- [Backup Generator Installation](https://www.callelectric.net/service/generator-installs): Generac backup generators, inlet boxes, and interlock kits
+
+## Contact
+
+- Phone: [304-578-5918](tel:304-578-5918)
+- Email: [chris@callelectric.net](mailto:chris@callelectric.net)
+- Facebook: [CALL Electric LLC](https://www.facebook.com/callelectricllc/)
+- Location: Lewisburg, West Virginia (Greenbrier County)

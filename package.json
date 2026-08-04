@@ -1,0 +1,11 @@
+{
+  "name": "call-electric",
+  "private": true,
+  "scripts": {
+    "dev": "serve . -l 8000",
+    "start": "serve . -l 8000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

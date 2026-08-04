@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.callelectric.net/sitemap.xml
+LLMs-txt: https://www.callelectric.net/llms.txt
