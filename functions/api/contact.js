@@ -54,14 +54,42 @@ export async function onRequestOptions() {
   return new Response(null, { status: 204, headers: corsHeaders });
 }
 
+function envValue(env, names) {
+  for (const name of names) {
+    const value = env?.[name];
+    if (typeof value === 'string' && value.trim()) return value.trim();
+  }
+  return '';
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
-  const resendKey = env.resend_api_key;
-  const turnstileSecret = env.turnstile_secret_key;
+  // Pages dashboard secrets/vars — prefer exact names, then common variants.
+  const resendKey = envValue(env, [
+    'resend_api_key',
+    'RESEND_API_KEY',
+    'RESEND_API',
+  ]);
+  const turnstileSecret = envValue(env, [
+    'turnstile_secret_key',
+    'TURNSTILE_SECRET_KEY',
+    'TURNSTILE_SECRET',
+  ]);
 
   if (!resendKey || !turnstileSecret) {
-    return json({ ok: false, error: 'Form is not configured.' }, 500);
+    const missing = [
+      !resendKey ? 'resend_api_key' : null,
+      !turnstileSecret ? 'turnstile_secret_key' : null,
+    ].filter(Boolean);
+    console.error('Contact form missing env bindings:', missing.join(', '));
+    return json(
+      {
+        ok: false,
+        error: `Form is not configured. Missing: ${missing.join(', ')}`,
+      },
+      500
+    );
   }
 
   let payload;
