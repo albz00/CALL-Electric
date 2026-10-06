@@ -3,25 +3,34 @@
 }
 
 .hero-badges {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px 14px;
+  flex: 1 0 100%;
+  width: 100%;
+  gap: 16px 22px;
+  margin-top: 18px;
 }
 
 .hero-badges img {
-  height: 72px;
+  height: 124px;
   width: auto;
-  max-width: 132px;
   object-fit: contain;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .hero-badges {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-badges {
+    flex: 0 0 auto;
     justify-content: center;
   }
 
   .hero-badges img {
-    height: 64px;
+    height: 104px;
   }
 }
