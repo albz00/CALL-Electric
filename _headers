@@ -1,0 +1,7 @@
+# Long-lived image cache. Filenames are stable, so browsers revalidate with ETag
+# after max-age and can keep serving a stale copy while that check happens.
+/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=31536000
+
+/images/remote/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=31536000
